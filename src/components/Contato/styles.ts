@@ -13,6 +13,10 @@ export const CardContato = styled.div`
   &:hover {
     border: 2px solid ${variaveis.corAzul};
   }
+
+  div {
+    margin-top: 8px;
+  }
 `
 
 export const Etiqueta = styled.span`
@@ -24,11 +28,13 @@ export const Etiqueta = styled.span`
   border-radius: 8px;
 `
 
-export const CampoContato = styled.span`
+export const CampoContato = styled.input`
   display: block;
   padding: 8px;
   font-weight: bold;
   font-size: 18px;
+  border: none;
+  color: ${variaveis.preto};
 `
 
 export const CampoEmail = styled(CampoContato)`
