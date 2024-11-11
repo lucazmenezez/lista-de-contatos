@@ -2,6 +2,7 @@ export default {
   branco: '#fff',
   branco2: '#fcfcfc',
   preto: '#000',
+  preto2: '#2f3640',
   corCinza: '#eee',
   corCinza2: '#e1e1e1',
   corCinza3: '#a1a1a1',

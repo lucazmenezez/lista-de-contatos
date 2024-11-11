@@ -1,10 +1,11 @@
 import FiltroCard from "../../components/FiltroCard"
+import { Campo } from "../../styles"
 import * as S from './styles'
 
 const Sidebar = () => (
   <S.Aside>
     <div>
-      <S.Campo type="text" placeholder="Buscar contato..." />
+      <Campo type="text" placeholder="Buscar contato..." />
       <S.Filtros>
         <FiltroCard contador={1} legenda="Pessoal" />
         <FiltroCard contador={2} legenda="Família" />
