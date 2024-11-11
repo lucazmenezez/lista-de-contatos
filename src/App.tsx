@@ -1,10 +1,15 @@
-import EstiloGlobal from "./styles";
+import ContactList from "./containers/ContactList";
+import Sidebar from "./containers/Sidebar";
+import EstiloGlobal, { Container } from "./styles";
 
 function App() {
   return (
     <>
       <EstiloGlobal />
-      <h1>Olá React</h1>
+      <Container>
+        <Sidebar />
+        <ContactList />
+      </Container>
     </>
   )
 }
