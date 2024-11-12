@@ -1,16 +1,17 @@
 import styled from "styled-components";
 import variaveis from "../../styles/variaveis";
+import * as enums from '../../utils/enums/contato'
 
 type EtiquetaProps = {
-  valorEtiqueta?: 'Trabalho' | 'Pessoal' | 'Família'
+  valorEtiqueta?: enums.Contato
 }
 
 function retornaCorFundo(props: EtiquetaProps) {
-  if (props.valorEtiqueta === 'Trabalho') {
+  if (props.valorEtiqueta === enums.Contato.TRABALHO) {
     return variaveis.corAmarelo;
-  } else if (props.valorEtiqueta === 'Pessoal') {
+  } else if (props.valorEtiqueta === enums.Contato.PESSOAL) {
     return variaveis.corCinza;
-  } else if (props.valorEtiqueta === 'Família') {
+  } else if (props.valorEtiqueta === enums.Contato.FAMILIA) {
     return variaveis.corAzul;
   }
 }

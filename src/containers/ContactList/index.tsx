@@ -1,21 +1,22 @@
 import Contato from "../../components/Contato"
 import { ListaDeContatos, Main } from "./styles"
+import * as enums from '../../utils/enums/contato'
 
 const contatos = [
   {
-    etiqueta: 'Trabalho',
+    etiqueta: enums.Contato.TRABALHO,
     nome: 'João',
     email: 'contatodojoao@gmail.com',
     tel: 41919191919
   },
   {
-    etiqueta: 'Pessoal',
+    etiqueta: enums.Contato.PESSOAL,
     nome: 'Marcio',
     email: 'contatodomarcio@gmail.com',
     tel: 55919191919
   },
   {
-    etiqueta: 'Família',
+    etiqueta: enums.Contato.FAMILIA,
     nome: 'Ana',
     email: 'contatodaana@gmail.com',
     tel: 41919191919

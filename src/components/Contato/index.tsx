@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import * as S from './styles'
+import * as enums from '../../utils/enums/contato'
 
 type Props = {
-  etiqueta: string
+  etiqueta: enums.Contato
   nome: string
   email: string
   tel: number
@@ -14,7 +15,7 @@ const Contato = ({ etiqueta, nome, email, tel }: Props) => {
 
   return (
   <S.CardContato>
-    <S.Etiqueta valorEtiqueta={etiqueta as 'Trabalho' | 'Pessoal' | 'Família'}>{etiqueta}</S.Etiqueta>
+    <S.Etiqueta valorEtiqueta={etiqueta}>{etiqueta}</S.Etiqueta>
     <div>
       <S.CampoContato value={nome} disabled type='text' placeholder='João' />
       <S.CampoEmail value={email} disabled type='email' placeholder='contatodojoao@gmail.com' />
