@@ -14,7 +14,7 @@ const Contato = ({ etiqueta, nome, email, tel }: Props) => {
 
   return (
   <S.CardContato>
-    <S.Etiqueta>{etiqueta}</S.Etiqueta>
+    <S.Etiqueta valorEtiqueta={etiqueta as 'Trabalho' | 'Pessoal' | 'Família'}>{etiqueta}</S.Etiqueta>
     <div>
       <S.CampoContato value={nome} disabled type='text' placeholder='João' />
       <S.CampoEmail value={email} disabled type='email' placeholder='contatodojoao@gmail.com' />
@@ -23,13 +23,13 @@ const Contato = ({ etiqueta, nome, email, tel }: Props) => {
     <S.BarraAcoes>
       {editando ? (
         <>
-          <S.Botao>Salvar</S.Botao>
-          <S.Botao onClick={() => setEditando(false)}>Cancelar</S.Botao>
+          <S.BotaoSalvar>Salvar</S.BotaoSalvar>
+          <S.BotaoRemoverCancelar onClick={() => setEditando(false)}>Cancelar</S.BotaoRemoverCancelar>
         </>
       ) : (
         <>
           <S.Botao onClick={() => setEditando(true)}>Editar</S.Botao>
-          <S.Botao>Remover</S.Botao>
+          <S.BotaoRemoverCancelar>Remover</S.BotaoRemoverCancelar>
         </>
       )}
     </S.BarraAcoes>

@@ -1,6 +1,19 @@
 import styled from "styled-components";
 import variaveis from "../../styles/variaveis";
-import { Campo } from "../../styles";
+
+type EtiquetaProps = {
+  valorEtiqueta?: 'Trabalho' | 'Pessoal' | 'Família'
+}
+
+function retornaCorFundo(props: EtiquetaProps) {
+  if (props.valorEtiqueta === 'Trabalho') {
+    return variaveis.corAmarelo;
+  } else if (props.valorEtiqueta === 'Pessoal') {
+    return variaveis.corCinza;
+  } else if (props.valorEtiqueta === 'Família') {
+    return variaveis.corAzul;
+  }
+}
 
 export const CardContato = styled.div`
   background-color: ${variaveis.branco2};
@@ -19,10 +32,10 @@ export const CardContato = styled.div`
   }
 `
 
-export const Etiqueta = styled.span`
+export const Etiqueta = styled.span<EtiquetaProps>`
   padding: 4px 8px;
   color: ${variaveis.preto};
-  background-color: ${variaveis.corCinza3};
+  background-color: ${(props) => retornaCorFundo(props)};
   font-weight: bold;
   font-size: 10px;
   border-radius: 8px;
@@ -68,5 +81,21 @@ export const Botao = styled.button`
   &:hover {
     background-color: ${variaveis.preto};
     transform: scale(1.05);
+  }
+`
+
+export const BotaoSalvar = styled(Botao)`
+  background-color: green;
+
+  &:hover {
+    background-color: ${variaveis.corVerde};
+  }
+`
+
+export const BotaoRemoverCancelar = styled(Botao)`
+  background-color: red;
+
+  &:hover {
+    background-color: ${variaveis.corVermelho};
   }
 `
