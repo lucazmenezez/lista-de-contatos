@@ -1,6 +1,6 @@
 import * as enums from '../utils/enums/contato'
 
-class Contato {
+class ContatoClasse {
   etiqueta: enums.Contato
   nome: string
   email: string
@@ -16,4 +16,4 @@ class Contato {
   }
 }
 
-export default Contato
+export default ContatoClasse

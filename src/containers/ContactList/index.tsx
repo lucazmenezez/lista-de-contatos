@@ -5,7 +5,7 @@ import { RootReducer } from "../../store"
 
 const ContactList = () => {
 
-  const { contatos } = useSelector((state: RootReducer) => state)
+  const { itens } = useSelector((state: RootReducer) => state.contatos)
 
   return (
     <Main>
@@ -13,9 +13,9 @@ const ContactList = () => {
         2 contatos marcados como: "categoria" e "termo"
       </p>
       <ListaDeContatos>
-        {contatos.map(t => (
+        {itens.map(t => (
           <li key={t.nome}>
-            <Contato etiqueta={t.etiqueta} nome={t.nome} email={t.email} tel={t.tel} />
+            <Contato etiqueta={t.etiqueta} nome={t.nome} email={t.email} tel={t.tel} id={t.id} />
           </li>
         ))}
       </ListaDeContatos>

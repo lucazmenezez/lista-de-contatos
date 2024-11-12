@@ -2,16 +2,42 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Contato from "../../models/classe";
 import * as enums from '../../utils/enums/contato'
 
+type ContatosState = {
+  itens: Contato[]
+}
+
+const initialState: ContatosState = {
+  itens: [
+    {
+      etiqueta: enums.Contato.TRABALHO,
+      nome: 'João',
+      email: 'contatodojoao@gmail.com',
+      tel: 41987654321,
+      id: 1
+    },
+    {
+      etiqueta: enums.Contato.PESSOAL,
+      nome: 'Marcio',
+      email: 'contatodomarcio@gmail.com',
+      tel: 41987654321,
+      id: 2
+    },
+    {
+      etiqueta: enums.Contato.FAMILIA,
+      nome: 'Ana',
+      email: 'contatodaana@gmail.com',
+      tel: 41987654321,
+      id: 3
+    }
+  ]
+}
+
 const SliceContatos = createSlice({
   name: 'contatos',
-  initialState: [
-    new Contato(enums.Contato.TRABALHO, 'João', 'contatodojoao@gmail.com', 41987654321, 1),
-    new Contato(enums.Contato.PESSOAL, 'Marcio', 'contatodomarcio@gmail.com', 41987654321, 2),
-    new Contato(enums.Contato.FAMILIA, 'Ana', 'contatodaana@gmail.com', 41987654321, 3),
-  ],
+  initialState,
   reducers: {
     remover: (state, action: PayloadAction<number>) => {
-      state = state.filter(tarefa => tarefa.id !== action.payload)
+      state.itens = state.itens.filter(tarefa => tarefa.id !== action.payload)
     }
   }
 })
