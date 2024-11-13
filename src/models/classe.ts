@@ -4,10 +4,10 @@ class ContatoClasse {
   etiqueta: enums.Contato
   nome: string
   email: string
-  tel: number
+  tel: string
   id: number
 
-  constructor(etiqueta: enums.Contato, nome: string, email: string, tel: number, id: number) {
+  constructor(etiqueta: enums.Contato, nome: string, email: string, tel: string, id: number) {
     this.etiqueta = etiqueta
     this.nome = nome
     this.email = email

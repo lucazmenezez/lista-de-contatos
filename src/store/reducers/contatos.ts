@@ -12,21 +12,21 @@ const initialState: ContatosState = {
       etiqueta: enums.Contato.TRABALHO,
       nome: 'João',
       email: 'contatodojoao@gmail.com',
-      tel: 41987654321,
+      tel: '41987654321',
       id: 1
     },
     {
       etiqueta: enums.Contato.PESSOAL,
       nome: 'Marcio',
       email: 'contatodomarcio@gmail.com',
-      tel: 41987654321,
+      tel: '41987654321',
       id: 2
     },
     {
       etiqueta: enums.Contato.FAMILIA,
       nome: 'Ana',
       email: 'contatodaana@gmail.com',
-      tel: 41987654321,
+      tel: '41987654321',
       id: 3
     }
   ]
@@ -38,9 +38,16 @@ const SliceContatos = createSlice({
   reducers: {
     remover: (state, action: PayloadAction<number>) => {
       state.itens = state.itens.filter(tarefa => tarefa.id !== action.payload)
+    },
+    editar: (state, action: PayloadAction<Contato>) => {
+      const indexTarefa = state.itens.findIndex((t) => t.id === action.payload.id)
+
+      if (indexTarefa >= 0) {
+        state.itens[indexTarefa] = action.payload
+      }
     }
   }
 })
 
-export const {remover} = SliceContatos.actions
+export const {remover, editar} = SliceContatos.actions
 export default SliceContatos.reducer
