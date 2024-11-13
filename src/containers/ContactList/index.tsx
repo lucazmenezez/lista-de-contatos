@@ -1,5 +1,5 @@
 import Contato from "../../components/Contato"
-import { ListaDeContatos, Main } from "./styles"
+import { ListaDeContatos, Main, Resultado } from "./styles"
 import { useSelector } from "react-redux"
 import { RootReducer } from "../../store"
 import * as enums from '../../utils/enums/contato'
@@ -38,18 +38,27 @@ const ContactList = () => {
     }
   }
 
+  const exibeResultadoFiltragem = (quantidade: number) => {
+    let mensagem = ''
+    const complementacao = termo !== undefined && termo.length > 0 ? `e "${termo}"` : ''
+    if (criterio === 'todos') {
+      mensagem = `${quantidade} contato(s) encontrado(s) como: todos ${complementacao}`
+    } else {
+      mensagem = `${quantidade} contato(s) encontrado(s) como: "${valor}" ${complementacao}`
+    }
+    return mensagem
+  }
+
+  const contatos = filtraContatos()
+  const mensagem = exibeResultadoFiltragem(contatos.length)
+
   return (
     <Main>
-      <p>
-        2 contatos marcados como: "categoria" e "{termo}"
-      </p>
-      <ul>
-        <li>{termo}</li>
-        <li>{criterio}</li>
-        <li>{valor}</li>
-      </ul>
+      <Resultado>
+        {mensagem}
+      </Resultado>
       <ListaDeContatos>
-        {filtraContatos().map(t => (
+        {contatos.map(t => (
           <li key={t.nome}>
             <Contato etiqueta={t.etiqueta} nome={t.nome} email={t.email} tel={t.tel} id={t.id} />
           </li>
