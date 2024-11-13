@@ -4,6 +4,7 @@ import { Campo } from "../../styles"
 import * as S from './styles'
 import { RootReducer } from "../../store"
 import { alterarTermo } from "../../store/reducers/filtro"
+import * as enums from '../../utils/enums/contato'
 
 const Sidebar = () => {
 
@@ -20,10 +21,10 @@ const Sidebar = () => {
         placeholder="Buscar contato..."
         />
         <S.Filtros>
-          <FiltroCard contador={1} legenda="Pessoal" />
-          <FiltroCard contador={2} legenda="Família" />
-          <FiltroCard contador={3} legenda="Trabalho" />
-          <FiltroCard contador={4} legenda="Todos" ativo />
+          <FiltroCard legenda="Pessoal" criterio="pessoal" valor={enums.Contato.PESSOAL} />
+          <FiltroCard legenda="Família" criterio="pessoal" valor={enums.Contato.FAMILIA} />
+          <FiltroCard legenda="Trabalho" criterio="trabalho" valor={enums.Contato.TRABALHO} />
+          <FiltroCard legenda="Todos" criterio="todos"  />
         </S.Filtros>
       </div>
     </S.Aside>
