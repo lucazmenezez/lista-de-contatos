@@ -25,7 +25,6 @@ export const Campo = styled.input`
   color: ${variaveis.corCinza4};
   border-color: ${variaveis.corCinza4};
   width: 100%;
-  box-shadow: 0px 4px 4px rgba(0,0,0, 0.25);
 `
 
 export default EstiloGlobal
