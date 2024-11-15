@@ -10,11 +10,22 @@ const EstiloGlobal = createGlobalStyle`
     list-style: none;
     text-decoration: none;
   }
+
+  html, body {
+    height: 100%;
+    overflow-y: auto;
+  }
 `
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 224px auto;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    height: 100%;
+    overflow: hidden;
+  }
 `
 
 export const Campo = styled.input`
@@ -23,8 +34,14 @@ export const Campo = styled.input`
   border-radius: 8px;
   font-weight: bold;
   color: ${variaveis.corCinza4};
-  border-color: ${variaveis.corCinza4};
+  border: 2px solid ${variaveis.preto2};
+  outline: none;
   width: 100%;
+
+  @media (max-width: 767px) {
+    padding: 16px 12px;
+    font-size: 18px;
+  }
 `
 
 export const Titulo = styled.h2`

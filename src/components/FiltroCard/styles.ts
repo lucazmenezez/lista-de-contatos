@@ -18,6 +18,11 @@ export const Card = styled.div<Props>`
   &:hover {
     transform: scale(1.08);
   }
+
+  @media (max-width: 767px) {
+    padding: 24px 8px;
+    text-align: center;
+  }
 `
 
 export const Contador = styled.span`
@@ -28,4 +33,8 @@ export const Contador = styled.span`
 
 export const Label = styled.span`
   font-size: 14px;
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
 `

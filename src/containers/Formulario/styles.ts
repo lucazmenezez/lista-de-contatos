@@ -8,6 +8,21 @@ export const ContainerForm = styled.div`
   height: 100vh;
   margin: 0 auto;
 
+  @media (max-width: 767px) {
+    padding: 40px;
+  }
+
+  form {
+    border: 2px solid ${variaveis.corCinza3};
+    border-radius: 12px;
+    padding: 24px;
+
+    @media (max-width: 767px) {
+      padding: 8px;
+      border: none;
+    }
+  }
+
   h2 {
     font-size: 28px;
     text-align: center;
@@ -15,17 +30,15 @@ export const ContainerForm = styled.div`
     margin-bottom: 24px;
   }
 
-  form {
-    border: 2px solid ${variaveis.corCinza3};
-    border-radius: 12px;
-    padding: 24px;
-  }
-
   p {
     text-align: center;
     margin: 24px 0;
     font-size: 20px;
     color: ${variaveis.preto2};
+
+    @media (max-width: 767px) {
+      margin-top: 40px;
+    }
   }
 `
 
@@ -44,6 +57,10 @@ export const CampoTexto = styled.input`
     border-color: ${variaveis.corCinza4};
     box-shadow: 0px 0px 4px ${variaveis.corCinza4};
   }
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `
 
 export const ContainerRadio = styled.div`
@@ -53,6 +70,10 @@ export const ContainerRadio = styled.div`
 
   input[type="radio"] {
     margin-right: 6px;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 40px;
   }
 `
 
@@ -70,6 +91,10 @@ export const ContainerBotao = styled.div`
   align-items: center;
   justify-content: center;
   padding: 24px;
+
+  @media (max-width: 767px) {
+    padding: 0;
+  }
 `
 
 export const Botao = styled.button`

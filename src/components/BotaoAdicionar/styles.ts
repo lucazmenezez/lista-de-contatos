@@ -22,4 +22,9 @@ export const EstiloBotaoAdicionar = styled(Link)`
     transform: translateY(-3px);
     background-color: ${variaveis.corVerdeEscuro};
   }
+
+  @media (max-width: 767px) {
+    bottom: 20px;
+    right: 20px;
+  }
 `
