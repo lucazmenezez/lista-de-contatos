@@ -1,8 +1,9 @@
 import Contato from "../../components/Contato"
-import { ListaDeContatos, Main, Resultado } from "./styles"
+import { ListaDeContatos, Main } from "./styles"
 import { useSelector } from "react-redux"
 import { RootReducer } from "../../store"
 import * as enums from '../../utils/enums/contato'
+import { Titulo } from "../../styles"
 
 const ContactList = () => {
 
@@ -54,9 +55,9 @@ const ContactList = () => {
 
   return (
     <Main>
-      <Resultado>
+      <Titulo>
         {mensagem}
-      </Resultado>
+      </Titulo>
       <ListaDeContatos>
         {contatos.map(t => (
           <li key={t.nome}>

@@ -27,4 +27,13 @@ export const Campo = styled.input`
   width: 100%;
 `
 
+export const Titulo = styled.h2`
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: bold;
+`
+
+
 export default EstiloGlobal

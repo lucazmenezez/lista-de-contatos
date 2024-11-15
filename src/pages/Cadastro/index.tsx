@@ -1,8 +1,11 @@
-const Cadastro = () => {
+import BotaoVoltar from "../../components/BotaoVoltar"
+import Formulario from "../../containers/Formulario"
 
-  return (
-    <div>Novo Contato</div>
+const Cadastro = () => (
+    <>
+      <BotaoVoltar />
+      <Formulario />
+    </>
   )
-}
 
 export default Cadastro

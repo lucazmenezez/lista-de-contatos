@@ -28,6 +28,20 @@ const initialState: ContatosState = {
       email: 'contatodaana@gmail.com',
       tel: '41987654321',
       id: 3
+    },
+    {
+      etiqueta: enums.Contato.PESSOAL,
+      nome: 'Carla',
+      email: 'carladasilva@gmail.com',
+      tel: '41987654321',
+      id: 4
+    },
+    {
+      etiqueta: enums.Contato.FAMILIA,
+      nome: 'Edmilton',
+      email: '21211edmilton@gmail.com',
+      tel: '41987654321',
+      id: 5
     }
   ]
 }
@@ -45,9 +59,19 @@ const SliceContatos = createSlice({
       if (indexTarefa >= 0) {
         state.itens[indexTarefa] = action.payload
       }
+    },
+    cadastrar: (state, action: PayloadAction<Contato>) => {
+      const contatoJaExiste = state.itens.find(
+        (contato) => contato.nome.toLowerCase() === action.payload.nome.toLowerCase())
+
+      if (contatoJaExiste) {
+        alert('Já existe um contato com esse nome')
+      } else {
+        state.itens.push(action.payload)
+      }
     }
   }
 })
 
-export const {remover, editar} = SliceContatos.actions
+export const {remover, editar, cadastrar} = SliceContatos.actions
 export default SliceContatos.reducer
