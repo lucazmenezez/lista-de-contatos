@@ -83,7 +83,7 @@ export const Botao = styled.button`
   border: 2px solid ${variaveis.corVerde};
   border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.4s ease, color .4s ease ;
 
   &:hover {
     background-color: transparent;

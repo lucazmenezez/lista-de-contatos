@@ -10,22 +10,22 @@ function retornaCorFundo(props: EtiquetaProps) {
   if (props.valorEtiqueta === enums.Contato.TRABALHO) {
     return variaveis.corAmarelo;
   } else if (props.valorEtiqueta === enums.Contato.PESSOAL) {
-    return variaveis.corCinza;
+    return variaveis.corCinza3;
   } else if (props.valorEtiqueta === enums.Contato.FAMILIA) {
     return variaveis.corAzul;
   }
 }
 
-export const CardContato = styled.div`
-  background-color: ${variaveis.branco2};
+export const CardContato = styled.div<{ editando: boolean }>`
+  background-color: ${({ editando }) => (editando ? variaveis.corCinza : variaveis.branco2)};
   box-shadow: 0px 4px 4px rgba(0,0,0, 0.25);
   padding: 16px;
-  border: 2px solid transparent;
+  border: 2px solid ${({editando}) => editando ? variaveis.preto : 'transparent'};
   border-radius: 12px;
-  transition: background-color .4s ease;
+  transition: background-color .4s ease, border .4s ease;
 
   &:hover {
-    border: 2px solid ${variaveis.corAzul};
+    border: 2px solid ${({editando}) => editando ? variaveis.preto : variaveis.corAzul};
   }
 
   div {
@@ -90,17 +90,17 @@ export const Botao = styled.button`
 `
 
 export const BotaoSalvar = styled(Botao)`
-  background-color: green;
+  background-color: ${variaveis.corVerde};
 
   &:hover {
-    background-color: ${variaveis.corVerde};
+    background-color: ${variaveis.corVerdeEscuro};
   }
 `
 
 export const BotaoRemoverCancelar = styled(Botao)`
-  background-color: red;
+  background-color: ${variaveis.corVermelho};
 
   &:hover {
-    background-color: ${variaveis.corVermelho};
+    background-color: ${variaveis.corVermelhoEscuro};
   }
 `

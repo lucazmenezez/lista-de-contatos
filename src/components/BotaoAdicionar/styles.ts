@@ -16,7 +16,7 @@ export const EstiloBotaoAdicionar = styled(Link)`
   border-radius: 50%;
   font-size: 40px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.3s;
 
   &:hover {
     transform: translateY(-3px);

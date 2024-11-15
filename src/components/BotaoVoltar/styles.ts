@@ -16,9 +16,10 @@ export const EstiloBotaoVoltar = styled(Link)`
   align-items: center;
   font-size: 18px;
   text-decoration: none;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.3s;
 
   &:hover {
     transform: translateY(-3px);
+    background-color: ${variaveis.corVermelhoEscuro};
   }
 `

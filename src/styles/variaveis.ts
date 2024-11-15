@@ -9,8 +9,9 @@ export default {
   corCinza4: '#666666',
   corCinza5: '#5e5e5e',
   corVerde: '#44BD32',
-  corVerdeEscuro: '#005f39',
+  corVerdeEscuro: 'green',
   corVermelho: '#C23616',
+  corVermelhoEscuro: 'red',
   corAmarelo: '#F0C11A',
   corAzul: '#1E90FF'
 }

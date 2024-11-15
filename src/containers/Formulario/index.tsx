@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom"
 import { Titulo } from "../../styles"
 import * as S from "./styles"
 import * as enums from '../../utils/enums/contato'
-import ContatoClasse from "../../models/classe"
 import { cadastrar } from "../../store/reducers/contatos"
 
 const Formulario = () => {
@@ -21,9 +20,23 @@ const Formulario = () => {
   const cadastrarTarefa = (evento: FormEvent) => {
     evento.preventDefault()
 
-    const contatoParaAdicionar = new ContatoClasse(contatos, nome, email, tel, 9)
+    if (nome.trim().split(" ").length < 2) {
+      alert("Por favor, insira o nome completo.");
+      return;
+    }
 
-    dispatch(cadastrar(contatoParaAdicionar))
+    const telValido = /^\d{8,}$/.test(tel.trim());
+    if (!telValido) {
+      alert("O telefone deve conter pelo menos 8 dígitos e apenas números.");
+      return;
+    }
+
+    dispatch(cadastrar({
+      etiqueta: contatos,
+      nome,
+      email,
+      tel
+    }))
     navigate('/')
   }
 
@@ -35,19 +48,19 @@ const Formulario = () => {
         type="text"
         value={nome}
         onChange={(evento) => setNome(evento.target.value)}
-        placeholder="Insira um nome ou título"
+        placeholder="Insira o nome completo"
         />
         <S.CampoTexto
         type="email"
         value={email}
         onChange={(evento) => setEmail(evento.target.value)}
-        placeholder="Insira um e-mail válido"
+        placeholder="exemplo@gmail.com"
         />
         <S.CampoTexto
         type="tel"
         value={tel}
         onChange={({target}) => setTel(target.value)}
-        placeholder="Insira um número de telefone"
+        placeholder="00 0000-0000"
         />
         <p>Escolha uma Categoria</p>
         <S.ContainerRadio>

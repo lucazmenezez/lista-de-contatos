@@ -60,14 +60,21 @@ const SliceContatos = createSlice({
         state.itens[indexTarefa] = action.payload
       }
     },
-    cadastrar: (state, action: PayloadAction<Contato>) => {
+    cadastrar: (state, action: PayloadAction<Omit<Contato, 'id'>>) => {
       const contatoJaExiste = state.itens.find(
         (contato) => contato.nome.toLowerCase() === action.payload.nome.toLowerCase())
 
       if (contatoJaExiste) {
         alert('Já existe um contato com esse nome')
       } else {
-        state.itens.push(action.payload)
+        const ultimaTarefa = state.itens[state.itens.length - 1]
+
+        const tarefaNova = {
+          ...action.payload,
+          id: ultimaTarefa ? ultimaTarefa.id + 1 : 1
+        }
+
+        state.itens.push(tarefaNova)
       }
     }
   }

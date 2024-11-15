@@ -13,6 +13,11 @@ export const Card = styled.div<Props>`
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0,0,0, 0.25);
   cursor: pointer;
+  transition: transform .3s ease, background-color .3s ease, color .3s ease;
+
+  &:hover {
+    transform: scale(1.08);
+  }
 `
 
 export const Contador = styled.span`

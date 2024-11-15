@@ -44,7 +44,7 @@ const Contato = ({ etiqueta, nome: nomeOriginal, email: emailOriginal, tel: telO
 
 
   return (
-  <S.CardContato>
+  <S.CardContato editando={editando}>
     <S.Etiqueta valorEtiqueta={etiqueta}>{etiqueta}</S.Etiqueta>
     <div>
       <S.CampoContato
