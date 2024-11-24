@@ -57,13 +57,14 @@ export const CampoContato = styled.input`
 export const CampoEmail = styled(CampoContato)`
   font-weight: 400;
   font-size: 16px;
-  color: ${variaveis.corCinza3};
+  color: ${variaveis.preto};
 `
 
 export const CampoTel = styled(CampoContato)`
   font-weight: 400;
   font-size: 16px;
   margin-bottom: 0;
+  color: ${variaveis.preto};
 `
 
 export const BarraAcoes = styled.div`
